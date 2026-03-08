@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>AI Face Detection System</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:linear-gradient(120deg,#4facfe,#00f2fe);
+color:white;
+}
+
+header{
+text-align:center;
+padding:40px;
+}
+
+header h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+header p{
+font-size:18px;
+opacity:0.9;
+}
+
+.container{
+display:flex;
+justify-content:center;
+align-items:center;
+height:60vh;
+}
+
+.card{
+background:white;
+color:#333;
+padding:40px;
+border-radius:12px;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+text-align:center;
+width:400px;
+}
+
+button{
+background:#4facfe;
+border:none;
+color:white;
+padding:15px 30px;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+margin-top:20px;
+}
+
+button:hover{
+background:#2b7cff;
+}
+
+.features{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-top:40px;
+text-align:center;
+}
+
+.feature{
+background:white;
+color:#333;
+padding:20px;
+border-radius:10px;
+width:200px;
+box-shadow:0 5px 10px rgba(0,0,0,0.2);
+}
+
+footer{
+text-align:center;
+padding:20px;
+margin-top:40px;
+font-size:14px;
+opacity:0.8;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>AI Face Detection System</h1>
+
+<p>Real-Time Face Detection using Python, OpenCV and Flask</p>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Start Face Detection</h2>
+
+<p>Click the button below to activate the webcam and detect faces.</p>
+
+<button onclick="startDetection()">Start Detection</button>
+
+<p style="margin-top:15px;font-size:14px">
+Press <b>Q</b> to stop the camera.
+</p>
+
+</div>
+
+</div>
+
+<div class="features">
+
+<div class="feature">
+<h3>Real-Time</h3>
+<p>Detect faces instantly using computer vision.</p>
+</div>
+
+<div class="feature">
+<h3>AI Powered</h3>
+<p>Uses Haar Cascade model for face recognition.</p>
+</div>
+
+<div class="feature">
+<h3>Fast & Accurate</h3>
+<p>Optimized detection using OpenCV.</p>
+</div>
+
+</div>
+
+<footer>
+
+Face Detection System | BCA Software Engineering Project
+
+</footer>
+
+<script>
+
+function startDetection(){
+
+fetch("http://127.0.0.1:5000/start")
+
+.then(response => response.text())
+
+.then(data => console.log(data))
+
+}
+
+</script>
+
+</body>
+
+</html>
